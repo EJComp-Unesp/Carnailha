@@ -1,0 +1,10 @@
+PASSO-A-PASSO
+1 - Criar o arquivo de testes na pasta "tests"
+    Fazer a importação do teste no indice de testes [tests.js]
+2 - Rodar o teste e falhar
+3 - criar o arquivo de rotas em routes/v1
+4 - 
+5 - Criar pasta do controller e index.js contendo as funções desejadas
+6 - Criar pasta em model, caso necessário.
+7 - Dentro de model, caso necessário crie um Schema para o banco.
+8 - Rodar o teste novamente e passar, caso contrário refatorar para passar

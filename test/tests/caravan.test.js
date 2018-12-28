@@ -1,0 +1,105 @@
+let chai = require('chai');
+let chaiHttp = require('chai-http');
+chai.use(chaiHttp);
+
+let expect = chai.expect;
+let should = chai.should;
+
+let server = require('../../loader.js');
+let token = require('./token');
+describe('Test Caravans CRUD is Working', function(done){
+    let caravan;
+    it('should create a group of caravans for a state', function(done){
+        chai.request(server)
+            .post('/api/v1/caravan')
+            .set('authorization', `Bearer ${token.get().accessToken}`)
+            .send({
+                state: "São Paulo",
+                citys:[
+                    {
+                        city: "Presidente Prudente",
+                        promoters: [{              
+                            name:'Batatão',
+                            img:'https://www.carnailha.com.br/resources/img/promoters/Campo%20Grande.jpg',
+                            wpp: '(18) 991793921',
+                            email: 'gustavo.damicodionisio@hotmail.com',
+                            face_name: 'gustavo.damico.9',
+                            face_link: 'https://www.facebook.com/gustavo.damico.9'
+                        },
+                        {              
+                            name:'Arroz Doce',
+                            img:'https://www.carnailha.com.br/resources/img/promoters/Campo%20Grande.jpg',
+                            wpp: '(18) 991793921',
+                            email: 'gustavo.damicodionisio@hotmail.com',
+                            face_name: 'gustavo.damico.9',
+                            face_link: 'https://www.facebook.com/gustavo.damico.9'
+                        }]
+                    }
+                ]
+            })
+            .end(function(err, res){                
+                expect(res.status).to.eql(201);
+                expect(res.body.code).to.eql(201);
+                expect(res.body.faq).to.not.be.null;
+
+                faq = res.body.faq;
+                done();      
+            });
+    });
+
+    it('should get an array of states-citys-caravans', function(done){
+        chai.request(server)
+            .get(`/api/v1/caravan`)
+            .end(function(err, res){                
+                expect(res.status).to.eql(200);
+                expect(res.body.code).to.eql(200);
+                expect(res.body.faqs).to.not.be.null;
+                expect(res.body.faqs).to.be.an('array');
+
+                done();      
+            });
+    });
+
+    it('should get an FAQ', function(done){
+        chai.request(server)
+            .get(`/api/v1/faq/${faq._id}`)
+            .set('authorization', `Bearer ${token.get().accessToken}`)
+            .end(function(err, res){                
+                expect(res.status).to.eql(200);
+                expect(res.body.code).to.eql(200);
+                expect(res.body.faq).to.not.be.null;
+
+                done();      
+            });
+    });
+
+    it('should update FAQ', function(done){
+        chai.request(server)
+            .put('/api/v1/faq')
+            .set('authorization', `Bearer ${token.get().accessToken}`)
+            .send({
+                ...faq,
+                answer: 'Arroz doce!'
+            })
+            .end(function(err, res){                
+                expect(res.status).to.eql(200);
+                expect(res.body.code).to.eql(200);
+                expect(res.body.faq).to.not.be.null;
+
+                expect(res.body.faq.answer).to.eql('Arroz doce!');
+                done();      
+            });
+    });
+
+    it('should delete FAQ', function(done){
+        chai.request(server)
+            .delete(`/api/v1/faq/${faq._id}`)
+            .set('authorization', `Bearer ${token.get().accessToken}`)
+            .end(function(err, res){                
+                expect(res.status).to.eql(200);
+                expect(res.body.code).to.eql(200);
+                
+                done();      
+            });
+    });
+});
