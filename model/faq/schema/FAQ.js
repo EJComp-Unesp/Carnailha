@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
-var FAQSchema = new Schema({
+var QuestionSchema = new Schema({
     question: String,
     answer: String,
+});
+var FAQSchema = new Schema({
+    type: String,
+    questions: [QuestionSchema],
     active: {
         type: Boolean,
         default: true
