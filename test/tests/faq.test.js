@@ -13,10 +13,16 @@ describe('Test FAQ CRUD is Working', function(done){
         chai.request(server)
             .post('/api/v1/faq')
             .set('authorization', `Bearer ${token.get().accessToken}`)
-            .send({                
-                question:'Potato is the best?',
-                answer:'Yes, off course!!!',
-                type: 'Local'
+            .send({
+                type: 'Dúvidas Gerais',
+                questions: [{
+                    question: 'Quais os dias e horários do evento?',
+                    answer: 'O Carnailha ocorre entre os dias 01 e 05 de março de 2019, das 18h00 às 04h00 do dia seguinte (terminando, portanto, às 04h00 do dia 06 de março de 2019).'
+                },
+                {
+                    question: 'Qual o local do evento?',
+                    answer: 'Ainda não definido, porém costuma ser realizado em Ilha Solteira na Praia Catarina, localizada na saída da cidade, sentido Selvíria – MS. Para mais detalhes clique no link: https://goo.gl/maps/fzziPjjovwK2.'                    
+                }]
             })
             .end(function(err, res){                
                 expect(res.status).to.eql(201);
@@ -61,14 +67,14 @@ describe('Test FAQ CRUD is Working', function(done){
             .set('authorization', `Bearer ${token.get().accessToken}`)
             .send({
                 ...faq,
-                answer: 'Arroz doce!'
+                type: 'Alojamento'
             })
             .end(function(err, res){                
                 expect(res.status).to.eql(200);
                 expect(res.body.code).to.eql(200);
                 expect(res.body.faq).to.not.be.null;
 
-                expect(res.body.faq.answer).to.eql('Arroz doce!');
+                expect(res.body.faq.type).to.eql('Alojamento');
                 done();      
             });
     });
