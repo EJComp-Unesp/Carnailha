@@ -40,9 +40,9 @@ describe('Test Caravans CRUD is Working', function(done){
             .end(function(err, res){                
                 expect(res.status).to.eql(201);
                 expect(res.body.code).to.eql(201);
-                expect(res.body.faq).to.not.be.null;
+                expect(res.body.caravan).to.not.be.null;
 
-                faq = res.body.faq;
+                caravan = res.body.caravan;
                 done();      
             });
     });
@@ -53,47 +53,47 @@ describe('Test Caravans CRUD is Working', function(done){
             .end(function(err, res){                
                 expect(res.status).to.eql(200);
                 expect(res.body.code).to.eql(200);
-                expect(res.body.faqs).to.not.be.null;
-                expect(res.body.faqs).to.be.an('array');
+                expect(res.body.caravans).to.not.be.null;
+                expect(res.body.caravans).to.be.an('array');
 
                 done();      
             });
     });
 
-    it('should get an FAQ', function(done){
+    it('should get an caravan', function(done){
         chai.request(server)
-            .get(`/api/v1/faq/${faq._id}`)
+            .get(`/api/v1/caravan/${caravan._id}`)
             .set('authorization', `Bearer ${token.get().accessToken}`)
             .end(function(err, res){                
                 expect(res.status).to.eql(200);
                 expect(res.body.code).to.eql(200);
-                expect(res.body.faq).to.not.be.null;
+                expect(res.body.caravan).to.not.be.null;
 
                 done();      
             });
     });
 
-    it('should update FAQ', function(done){
+    it('should update caravan', function(done){
         chai.request(server)
-            .put('/api/v1/faq')
+            .put('/api/v1/caravan')
             .set('authorization', `Bearer ${token.get().accessToken}`)
             .send({
-                ...faq,
+                ...caravan,
                 answer: 'Arroz doce!'
             })
             .end(function(err, res){                
                 expect(res.status).to.eql(200);
                 expect(res.body.code).to.eql(200);
-                expect(res.body.faq).to.not.be.null;
+                expect(res.body.caravan).to.not.be.null;
 
-                expect(res.body.faq.answer).to.eql('Arroz doce!');
+                expect(res.body.caravan.answer).to.eql('Arroz doce!');
                 done();      
             });
     });
 
-    it('should delete FAQ', function(done){
+    it('should delete caravan', function(done){
         chai.request(server)
-            .delete(`/api/v1/faq/${faq._id}`)
+            .delete(`/api/v1/caravan/${caravan._id}`)
             .set('authorization', `Bearer ${token.get().accessToken}`)
             .end(function(err, res){                
                 expect(res.status).to.eql(200);
