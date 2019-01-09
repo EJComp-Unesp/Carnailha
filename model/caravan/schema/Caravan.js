@@ -14,7 +14,7 @@ var CitySchema = new Schema({
 });
 var CaravanSchema = new Schema({
     state: String,
-    citys: [CitySchema],
+    cities: [CitySchema],
     active: {
         type: Boolean,
         default: true
