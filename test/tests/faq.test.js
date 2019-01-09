@@ -37,7 +37,6 @@ describe('Test FAQ CRUD is Working', function(done){
     it('should get an array of FAQ`s', function(done){
         chai.request(server)
             .get(`/api/v1/faq`)
-            .set('authorization', `Bearer ${token.get().accessToken}`)
             .end(function(err, res){                
                 expect(res.status).to.eql(200);
                 expect(res.body.code).to.eql(200);
