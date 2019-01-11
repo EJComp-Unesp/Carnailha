@@ -6,7 +6,8 @@ require('./tests/oauth.test');
 require('./tests/accommodation.test');
 =======
 // require('./tests/image_upload.test');
-require('./tests/accommodation.test');
+// require('./tests/accommodation.test');
 // require('./tests/news.test');
+require('./tests/partner.test');
 
 >>>>>>> f6fb48f... News feature
