@@ -1,0 +1,10 @@
+{
+    "caravan" : {
+        "blank_state" : "O nome do estado não deve estar em branco!",
+        "blank_city" : "O nome da cidade não deve estar em branco!",
+        "blank_promoter_name": "O nome do promoter não deve estar em branco!",
+        "array_promoters": "Promoters deve ser um vetor!",
+        "array_cities": "Promoters deve ser um vetor!"
+
+    }
+}

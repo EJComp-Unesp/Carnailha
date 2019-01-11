@@ -1,7 +1,8 @@
 let mongoose = require('mongoose');
+const config = require('./config');
+const { DB: { host, port, name } } = config;
 mongoose.connect(
-    // 'mongodb://api_user:dvora1@ds249583.mlab.com:49583/dvora',
-    'mongodb://carnailha_admin:carna123@ds151943.mlab.com:51943/carnailha',
+    `mongodb://${host}:${port}/${name}`,
     {useNewUrlParser: true}
 );
 
