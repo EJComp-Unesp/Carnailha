@@ -60,7 +60,7 @@ describe('Test Accomodation CRUD is Working', function (done) {
             });
     });
 
-    it('should update accomodation', function (done) {
+    it('should update an accomodation', function (done) {
         chai.request(server)
             .put('/api/v1/accomodation')
             .set('authorization', `Bearer ${token.get().accessToken}`)
@@ -74,6 +74,7 @@ describe('Test Accomodation CRUD is Working', function (done) {
                 expect(res.body.accomodation).to.not.be.null;
 
                 expect(res.body.accomodation.name).to.eql('Arroz doce!');
+                expect(res.body.accomodation.updated_at).to.not.be.null;
                 done();
             });
     });
