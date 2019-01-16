@@ -6,5 +6,12 @@
         "array_promoters": "Promoters deve ser um vetor!",
         "array_cities": "Promoters deve ser um vetor!"
 
+    },
+    "upload": {
+        "mimetype" : "O formato inválido, formatos aceitos: (PNG, JPG e GIF)",
+        "size": "Tamanho do arquivo acima do limite.",
+        "count": "Número de arquivos exedeu o limite.",
+        "deleted_sucess": "Imagem deletada com sucesso!",
+        "deleted_failure": "Imagem não pode ser deletada!"
     }
 }
