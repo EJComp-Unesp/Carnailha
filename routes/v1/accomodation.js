@@ -4,7 +4,6 @@ let {
     MESSAGE_FILE
 } = require('../../config/config');
 let msg = require('../../config/messages/' + MESSAGE_FILE).accomodation;
-console.log(msg.blank_name);
 
 const {
     check,
@@ -19,7 +18,7 @@ const validator = [
     .isLength({
         min: 1
     })
-    .withMessage(msg.blank_name)
+    .withMessage(msg.blank_accomodation_name)
     .escape(),
 ]
 
