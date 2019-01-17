@@ -26,8 +26,8 @@ describe('Test News CRUD is Working', function (done) {
                 console.log(res.body);
                 expect(res.status).to.eql(406);
                 expect(res.body.code).to.eql(406);
-                expect(res.body.errors.heading.msg).to.be.eql(msg.blank_heading);
-                expect(res.body.errors.text.msg).to.be.eql(msg.blank_text);
+                expect(res.body.errors.heading.msg).to.be.eql(msg.blank_news_heading);
+                expect(res.body.errors.text.msg).to.be.eql(msg.blank_news_text);
                 expect(res.body.news).to.not.be.null;
                 done();
             });

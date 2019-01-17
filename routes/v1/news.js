@@ -17,13 +17,13 @@ const validator = [
         .isLength({
             min: 1
         })
-        .withMessage(msg.blank_heading)
+        .withMessage(msg.blank_news_heading)
         .escape(),
     check('text')
         .isLength({
             min: 1
         })
-        .withMessage(msg.blank_text)
+        .withMessage(msg.blank_news_text)
         .escape(),
 ]
 
