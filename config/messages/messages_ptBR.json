@@ -20,5 +20,9 @@
     "news": {
         "blank_heading" : "O título da notícia não pode estar em branco!",
         "blank_text" : "O texto da notícia não pode estar em branco!"
+    },
+    "partner": {
+        "blank_partner_name" : "O nome do parceiro não pode estar vazio!",
+        "no_partner_img" : "O caminho para a imagem não pode estar vazio!"
     }
 }
