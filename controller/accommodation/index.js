@@ -1,4 +1,4 @@
-let model = require('../../model/accomodation');
+let model = require('../../model/accommodation');
 
 module.exports.create = (data) => {
     return model.create(data);

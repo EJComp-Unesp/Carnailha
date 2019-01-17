@@ -1,9 +1,9 @@
-let controller = require('../../controller/accomodation');
+let controller = require('../../controller/accommodation');
 
 let {
     MESSAGE_FILE
 } = require('../../config/config');
-let msg = require('../../config/messages/' + MESSAGE_FILE).accomodation;
+let msg = require('../../config/messages/' + MESSAGE_FILE).accommodation;
 
 const {
     check,
@@ -18,12 +18,12 @@ const validator = [
     .isLength({
         min: 1
     })
-    .withMessage(msg.blank_accomodation_name)
+    .withMessage(msg.blank_accommodation_name)
     .escape(),
 ]
 
 module.exports = (app, authenticate) => {
-    app.post('/accomodation', validator, authenticate(), async (req, res) => {
+    app.post('/accommodation', validator, authenticate(), async (req, res) => {
         let errors = validationResult(req);
         if (!errors.isEmpty()) {
             res.status(406).json({
@@ -31,12 +31,12 @@ module.exports = (app, authenticate) => {
                 errors: errors.mapped()
             });
         } else {
-            let accomodation = await controller.create(req.body);
+            let accommodation = await controller.create(req.body);
 
-            if (accomodation) {
+            if (accommodation) {
                 res.status(201).json({
                     code: 201,
-                    accomodation
+                    accommodation
                 });
             } else {
                 res.status(500).json({
@@ -46,12 +46,12 @@ module.exports = (app, authenticate) => {
         }
     })
 
-    app.get('/accomodation', async (req, res) => {
-        let accomodations = await controller.get();
-        if (accomodations) {
+    app.get('/accommodation', async (req, res) => {
+        let accommodations = await controller.get();
+        if (accommodations) {
             res.status(200).json({
                 code: 200,
-                accomodations
+                accommodations
             });
         } else {
             res.status(500).json({
@@ -60,12 +60,12 @@ module.exports = (app, authenticate) => {
         }
     })
 
-    app.get('/accomodation/:id', async (req, res) => {
-        let accomodation = await controller.get(req.params.id);
-        if (accomodation) {
+    app.get('/accommodation/:id', async (req, res) => {
+        let accommodation = await controller.get(req.params.id);
+        if (accommodation) {
             res.status(200).json({
                 code: 200,
-                accomodation
+                accommodation
             });
         } else {
             res.status(500).json({
@@ -74,17 +74,17 @@ module.exports = (app, authenticate) => {
         }
     })
 
-    app.put('/accomodation', authenticate(), async (req, res) => {
+    app.put('/accommodation', authenticate(), async (req, res) => {
         let {
             _id,
             ...data
         } = req.body;
-        let accomodation = await controller.update(_id, data);
+        let accommodation = await controller.update(_id, data);
 
-        if (accomodation) {
+        if (accommodation) {
             res.status(200).json({
                 code: 200,
-                accomodation
+                accommodation
             });
         } else {
             res.status(500).json({
@@ -93,7 +93,7 @@ module.exports = (app, authenticate) => {
         }
     })
 
-    app.delete('/accomodation/:id', authenticate(), async (req, res) => {
+    app.delete('/accommodation/:id', authenticate(), async (req, res) => {
         let result = await controller.delete(req.params.id);
         if (result) {
             res.status(200).json({
