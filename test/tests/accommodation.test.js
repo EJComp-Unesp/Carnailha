@@ -9,33 +9,6 @@ let server = require('../../loader.js');
 let token = require('./token');
 describe('Test Accomodation CRUD is Working', function (done) {
     let caravan;
-    it('should test validation problems', function (done) {
-        let {MESSAGE_FILE} = require('../../config/config');
-        let msg = require('../../config/messages/' + MESSAGE_FILE).accomodation;
-        chai.request(server)
-            .post('/api/v1/accomodation')
-            .set('authorization', `Bearer ${token.get().accessToken}`)
-            .send({
-                name: '',
-                img: '',
-                type: '',
-                vacancies: '',
-                location: '',
-                structure: '',
-                extras: '',
-                contact: '',
-                price: '',
-            })
-            .end(function (err, res) {
-                console.log(res.body);
-                expect(res.status).to.eql(406);
-                expect(res.body.code).to.eql(406);
-                expect(res.body.errors.name.msg).to.be.eql(msg.blank_name);
-                expect(res.body.accomodation).to.not.be.null;
-                done();
-            });
-    });
-
     it('should create a few accomodations', function (done) {
         chai.request(server)
             .post('/api/v1/accomodation')
