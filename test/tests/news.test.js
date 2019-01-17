@@ -8,8 +8,32 @@ let should = chai.should;
 let server = require('../../loader.js');
 let token = require('./token');
 describe('Test News CRUD is Working', function (done) {
-    let caravan;
-    it('should create a news', function (done) {
+    let news;
+    /* it('should test validation problems', function (done) {
+        let {MESSAGE_FILE} = require('../../config/config');
+        let msg = require('../../config/messages/' + MESSAGE_FILE).news;
+        chai.request(server)
+            .post('/api/v1/news')
+            .set('authorization', `Bearer ${token.get().accessToken}`)
+            .send({
+                heading: '',
+                subheading: '',
+                img: '',
+                text: '',
+                author: '',
+            })
+            .end(function (err, res) {
+                console.log(res.body);
+                expect(res.status).to.eql(406);
+                expect(res.body.code).to.eql(406);
+                expect(res.body.errors.heading.msg).to.be.eql(msg.blank_heading);
+                expect(res.body.errors.text.msg).to.be.eql(msg.blank_text);
+                expect(res.body.news).to.not.be.null;
+                done();
+            });
+    }); */
+
+    it('should create news', function (done) {
         chai.request(server)
             .post('/api/v1/news')
             .set('authorization', `Bearer ${token.get().accessToken}`)
