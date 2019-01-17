@@ -7,13 +7,13 @@ let should = chai.should;
 
 let server = require('../../loader.js');
 let token = require('./token');
-describe('Test Accomodation CRUD is Working', function (done) {
-    let accomodation;
+describe('Test Accommodation CRUD is Working', function (done) {
+    let accommodation;
     /* it('should test validation problems', function (done) {
         let {MESSAGE_FILE} = require('../../config/config');
-        let msg = require('../../config/messages/' + MESSAGE_FILE).accomodation;
+        let msg = require('../../config/messages/' + MESSAGE_FILE).accommodation;
         chai.request(server)
-            .post('/api/v1/accomodation')
+            .post('/api/v1/accommodation')
             .set('authorization', `Bearer ${token.get().accessToken}`)
             .send({
                 name: '',
@@ -30,15 +30,15 @@ describe('Test Accomodation CRUD is Working', function (done) {
                 console.log(res.body);
                 expect(res.status).to.eql(406);
                 expect(res.body.code).to.eql(406);
-                expect(res.body.errors.name.msg).to.be.eql(msg.blank_name);
-                expect(res.body.accomodation).to.not.be.null;
+                expect(res.body.errors.name.msg).to.be.eql(msg.blank_accommodation_name);
+                expect(res.body.accommodation).to.not.be.null;
                 done();
             });
     }); */
 
-    it('should create a few accomodations', function (done) {
+    it('should create a few accommodations', function (done) {
         chai.request(server)
-            .post('/api/v1/accomodation')
+            .post('/api/v1/accommodation')
             .set('authorization', `Bearer ${token.get().accessToken}`)
             .send({
                 name: 'REPÚBLICA 5BOLA',
@@ -54,61 +54,61 @@ describe('Test Accomodation CRUD is Working', function (done) {
             .end(function (err, res) {
                 expect(res.status).to.eql(201);
                 expect(res.body.code).to.eql(201);
-                expect(res.body.accomodation).to.not.be.null;
+                expect(res.body.accommodation).to.not.be.null;
 
-                accomodation = res.body.accomodation;
+                accommodation = res.body.accommodation;
                 done();
             });
     });
 
-    it('should get an array of accomodations', function (done) {
+    it('should get an array of accommodations', function (done) {
         chai.request(server)
-            .get(`/api/v1/accomodation`)
+            .get(`/api/v1/accommodation`)
             .end(function (err, res) {
                 expect(res.status).to.eql(200);
                 expect(res.body.code).to.eql(200);
-                expect(res.body.accomodations).to.not.be.null;
-                expect(res.body.accomodations).to.be.an('array');
+                expect(res.body.accommodations).to.not.be.null;
+                expect(res.body.accommodations).to.be.an('array');
 
                 done();
             });
     });
 
-    it('should get an accomodation', function (done) {
+    it('should get an accommodation', function (done) {
         chai.request(server)
-            .get(`/api/v1/accomodation/${accomodation._id}`)
+            .get(`/api/v1/accommodation/${accommodation._id}`)
             .set('authorization', `Bearer ${token.get().accessToken}`)
             .end(function (err, res) {
                 expect(res.status).to.eql(200);
                 expect(res.body.code).to.eql(200);
-                expect(res.body.accomodation).to.not.be.null;
+                expect(res.body.accommodation).to.not.be.null;
 
                 done();
             });
     });
 
-    it('should update an accomodation', function (done) {
+    it('should update an accommodation', function (done) {
         chai.request(server)
-            .put('/api/v1/accomodation')
+            .put('/api/v1/accommodation')
             .set('authorization', `Bearer ${token.get().accessToken}`)
             .send({
-                ...accomodation,
+                ...accommodation,
                 name: 'Arroz doce!'
             })
             .end(function (err, res) {
                 expect(res.status).to.eql(200);
                 expect(res.body.code).to.eql(200);
-                expect(res.body.accomodation).to.not.be.null;
+                expect(res.body.accommodation).to.not.be.null;
 
-                expect(res.body.accomodation.name).to.eql('Arroz doce!');
-                expect(res.body.accomodation.updated_at).to.not.be.null;
+                expect(res.body.accommodation.name).to.eql('Arroz doce!');
+                expect(res.body.accommodation.updated_at).to.not.be.null;
                 done();
             });
     });
 
-    it('should delete the last accomodation', function (done) {
+    it('should delete the last accommodation', function (done) {
         chai.request(server)
-            .delete(`/api/v1/accomodation/${accomodation._id}`)
+            .delete(`/api/v1/accommodation/${accommodation._id}`)
             .set('authorization', `Bearer ${token.get().accessToken}`)
             .end(function (err, res) {
                 expect(res.status).to.eql(200);
@@ -118,18 +118,18 @@ describe('Test Accomodation CRUD is Working', function (done) {
             });
     });
 
-    /* it('should clean all accomodations', function (done) {
+    /* it('should clean all accommodations', function (done) {
         chai.request(server)
-            .get(`/api/v1/accomodation`)
+            .get(`/api/v1/accommodation`)
             .end(function (err, res) {
                 expect(res.status).to.eql(200);
                 expect(res.body.code).to.eql(200);
-                expect(res.body.accomodations).to.not.be.null;
-                expect(res.body.accomodations).to.be.an('array');
-                res.body.accomodations.forEach(element => {
+                expect(res.body.accommodations).to.not.be.null;
+                expect(res.body.accommodations).to.be.an('array');
+                res.body.accommodations.forEach(element => {
                     //console.log(element);
                     chai.request(server)
-                        .delete(`/api/v1/accomodation/${element._id}`)
+                        .delete(`/api/v1/accommodation/${element._id}`)
                         .set('authorization', `Bearer ${token.get().accessToken}`)
                         .end(function (err, res) {
                             expect(res.status).to.eql(200);

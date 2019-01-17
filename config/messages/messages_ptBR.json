@@ -14,12 +14,12 @@
         "deleted_sucess": "Imagem deletada com sucesso!",
         "deleted_failure": "Imagem não pode ser deletada!"
     },
-    "accomodation": {
-        "blank_name" : "O nome do alojamento não pode estar em branco!"
+    "accommodation": {
+        "blank_accommodation_name" : "O nome do alojamento não pode estar em branco!"
     },
     "news": {
-        "blank_heading" : "O título da notícia não pode estar em branco!",
-        "blank_text" : "O texto da notícia não pode estar em branco!"
+        "blank_news_heading" : "O título da notícia não pode estar em branco!",
+        "blank_news_text" : "O texto da notícia não pode estar em branco!"
     },
     "partner": {
         "blank_partner_name" : "O nome do parceiro não pode estar vazio!",
