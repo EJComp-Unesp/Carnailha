@@ -4,5 +4,5 @@ require('./tests/oauth.test');
 // require('./tests/caravan.test');
 // require('./tests/image_upload.test');
 // require('./tests/accommodation.test');
-require('./tests/news.test');
-// require('./tests/partner.test');
+// require('./tests/news.test');
+require('./tests/partner.test');
