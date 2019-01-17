@@ -8,7 +8,30 @@ let should = chai.should;
 let server = require('../../loader.js');
 let token = require('./token');
 describe('Test Partners CRUD is Working', function (done) {
-    let caravan;
+    let partner;
+    it('should test validation problems', function (done) {
+        let {MESSAGE_FILE} = require('../../config/config');
+        let msg = require('../../config/messages/' + MESSAGE_FILE).partner;
+        chai.request(server)
+            .post('/api/v1/partner')
+            .set('authorization', `Bearer ${token.get().accessToken}`)
+            .send({
+                name: '',
+                description: '',
+                link: '',
+                img: '',
+            })
+            .end(function (err, res) {
+                console.log(res.body);
+                expect(res.status).to.eql(406);
+                expect(res.body.code).to.eql(406);
+                expect(res.body.errors.name.msg).to.be.eql(msg.blank_partner_name);
+                expect(res.body.errors.img.msg).to.be.eql(msg.no_partner_img);
+                expect(res.body.partner).to.not.be.null;
+                done();
+            });
+    });
+
     it('should add a partner', function (done) {
         chai.request(server)
             .post('/api/v1/partner')
