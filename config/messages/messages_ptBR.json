@@ -13,5 +13,8 @@
         "count": "Número de arquivos exedeu o limite.",
         "deleted_sucess": "Imagem deletada com sucesso!",
         "deleted_failure": "Imagem não pode ser deletada!"
+    },
+    "accomodation": {
+        "blank_name" : "O nome do alojamento não pode estar em branco!"
     }
 }
