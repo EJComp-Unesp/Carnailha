@@ -15,6 +15,7 @@ module.exports.getOneById = async (id) => {
 
 module.exports.update = async (id, data) => {
     let caravan = await Caravan.findById(id).exec();
+    data.updated_at = new Date().getTime();
     caravan.set(data);
     return await caravan.save();
 }
