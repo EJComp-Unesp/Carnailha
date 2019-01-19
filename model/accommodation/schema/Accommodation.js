@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-var AccomodationSchema = new Schema({
+var AccommodationSchema = new Schema({
     name: String,
     img: String,
     type: String,
@@ -24,4 +24,4 @@ var AccomodationSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Accomodation', AccomodationSchema);
+module.exports = mongoose.model('Accommodation', AccommodationSchema);
