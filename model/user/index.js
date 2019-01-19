@@ -15,6 +15,7 @@ module.exports.getOneById = async (id) => {
 
 module.exports.update = async (id, data) => {
     let user = await User.findById(id).exec();
+    data.updated_at = new Date().getTime();
     user.set(data);
     return await user.save();
 }
