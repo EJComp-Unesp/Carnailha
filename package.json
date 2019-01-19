@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "directories": {
-    "test": "mocha || true"
+    "test": "mocha || true",
+    "build": "node ./scripts/build"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "node ./scripts/build"
   },
   "keywords": [],
   "author": "EJCOMP",
@@ -19,6 +21,8 @@
     "express": "^4.16.4",
     "express-oauth-server": "^2.0.0",
     "express-validator": "^5.3.1",
+    "fs-extra": "^7.0.1",
+    "markdown-it": "^8.4.2",
     "mocha": "^5.2.0",
     "mongoose": "^5.3.8",
     "multer": "^1.4.1",
