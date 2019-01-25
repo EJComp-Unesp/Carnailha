@@ -12,6 +12,11 @@ pages = [
     name: `caravanas`,
     getUrl: `caravan`,
     getArrayName: `caravans`
+  },
+  {
+    name: `faq`,
+    getUrl: `faq`,
+    getArrayName: `faqs`
   }
 ]
 // First delete everything in the build directory.
@@ -35,10 +40,12 @@ pages.forEach(page => {
       .end(function (err, res) {
         var pageTemplate = require(`./${page.name}`);//Read the template of page
         data[`${page.getArrayName}`] = res.body[`${page.getArrayName}`];//Save the array of regs
+        // console.log(data[`${page.getArrayName}`]);
         fs.writeFileSync(
           path.join(outputPath, `${page.name}.html`),
           pageTemplate.generatePage(data));
       }); //Write the file
+      console.log(`- ${page.name}.html`);
   }
   catch (err) {
     console.log('Error during page generation: ' + err);
