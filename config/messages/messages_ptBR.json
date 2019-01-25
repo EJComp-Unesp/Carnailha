@@ -24,5 +24,9 @@
     "partner": {
         "blank_partner_name" : "O nome do parceiro não pode estar vazio!",
         "no_partner_img" : "O caminho para a imagem não pode estar vazio!"
+    },
+    "stage": {
+        "blank_name": "O nome do palco não pode estar vazio!",
+        "blank_img": "O palco deve ter uma imagem representativa!"
     }
 }
