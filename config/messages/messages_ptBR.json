@@ -28,5 +28,10 @@
     "stage": {
         "blank_name": "O nome do palco não pode estar vazio!",
         "blank_img": "O palco deve ter uma imagem representativa!"
+    },
+    "drink":{
+        "blank_name": "O nome da bebida não pode estar vazio!",
+        "blank_icon": "A bebida deve ter uma ícone representativo!",
+        "min_quantity": "A quantidade deve ser no mínimo 1!"
     }
 }

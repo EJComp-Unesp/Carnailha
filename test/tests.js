@@ -6,4 +6,5 @@ require('./tests/oauth.test');
 // require('./tests/accommodation.test');
 // require('./tests/news.test');
 // require('./tests/partner.test');
-require('./tests/stage.test');
+// require('./tests/stage.test');
+require('./tests/drink.test');
