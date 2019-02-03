@@ -38,5 +38,11 @@
     "organizer": {
         "blank_name": "O nome do organizador não pode estar vazio!",
         "blank_img": "O organizador deve ter uma imagem/logo!"
+    },
+    "gallery": {
+        "blank_gallery_name": "O nome da galeria não pode estar vazio!",
+        "empty_gallery": "A galeria está vazia (sem imagens)!",
+        "blank_gallery_image_name": "O nome da imagem não pode estar vazio!",
+        "blank_gallery_image_img": "A indexação da imagem não pode estar vazia!"
     }
 }
