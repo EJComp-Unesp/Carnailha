@@ -15,11 +15,17 @@ const {
 
 const validator = [
     check('name')
-    .isLength({
-        min: 1
-    })
-    .withMessage(msg.blank_accommodation_name)
-    .escape(),
+        .isLength({ min: 1 })
+        .withMessage(msg.blank_accommodation_name)
+        .escape(),
+    check('vacancies')
+        .isLength({ min: 1 })
+        .withMessage(msg.blank_accommodation_vacancies)
+        .escape(),
+    check('contact')
+        .isLength({ min: 1 })
+        .withMessage(msg.blank_accommodation_contact)
+        .escape(),
 ]
 
 module.exports = (app, authenticate) => {
