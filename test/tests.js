@@ -9,4 +9,5 @@ require('./tests/oauth.test');
 // require('./tests/stage.test');
 // require('./tests/drink.test');
 // require('./tests/organizer.test');
-//require('./tests/gallery.test');
+// require('./tests/gallery.test');
+require('./tests/slider.test');

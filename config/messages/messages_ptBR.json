@@ -44,5 +44,10 @@
         "empty_gallery": "A galeria está vazia (sem imagens)!",
         "blank_gallery_image_name": "O nome da imagem não pode estar vazio!",
         "blank_gallery_image_img": "A indexação da imagem não pode estar vazia!"
+    },
+    "slider": {
+        "invalid_active_amount": "A quantidade de slides ativos deve ser um número inteiro maior que 0!",
+        "array_slides": "Slides deve ser um vetor!",
+        "blank_slide_img": "A indexação da imagem não pode estar vazia!"
     }
 }
