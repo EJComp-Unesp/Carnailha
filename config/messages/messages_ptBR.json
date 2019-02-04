@@ -41,7 +41,7 @@
     },
     "gallery": {
         "blank_gallery_name": "O nome da galeria não pode estar vazio!",
-        "empty_gallery": "A galeria está vazia (sem imagens)!",
+        "array_gallery": "A galeria não é um vetor!",
         "blank_gallery_image_name": "O nome da imagem não pode estar vazio!",
         "blank_gallery_image_img": "A indexação da imagem não pode estar vazia!"
     },

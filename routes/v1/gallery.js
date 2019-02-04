@@ -12,7 +12,7 @@ const validator = [
         .escape(),
     check('images')
         .isArray()
-        .withMessage(msg.empty_gallery),
+        .withMessage(msg.array_gallery),
     body('images.*.name')
         .isLength({ min: 1 })
         .withMessage(msg.blank_gallery_image_name)
