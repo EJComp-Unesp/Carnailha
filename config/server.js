@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var cors = require('cors');
+
 const config = require('./config');
 let app = express();
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(cors({origin: '*'}));
 //Serves a static directory to get images
 app.use('/images', express.static(config.UPLOAD_FOLDER));
 

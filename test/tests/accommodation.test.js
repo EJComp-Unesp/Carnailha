@@ -10,7 +10,7 @@ let token = require('./token');
 describe('Test Accommodation CRUD is Working', function (done) {
     let accommodation;
     /* it('should test validation problems', function (done) {
-        let {MESSAGE_FILE} = require('../../config/config');
+        let { MESSAGE_FILE } = require('../../config/config');
         let msg = require('../../config/messages/' + MESSAGE_FILE).accommodation;
         chai.request(server)
             .post('/api/v1/accommodation')
@@ -31,6 +31,8 @@ describe('Test Accommodation CRUD is Working', function (done) {
                 expect(res.status).to.eql(406);
                 expect(res.body.code).to.eql(406);
                 expect(res.body.errors.name.msg).to.be.eql(msg.blank_accommodation_name);
+                expect(res.body.errors.vacancies.msg).to.be.eql(msg.blank_accommodation_vacancies);
+                expect(res.body.errors.contact.msg).to.be.eql(msg.blank_accommodation_contact);
                 expect(res.body.accommodation).to.not.be.null;
                 done();
             });

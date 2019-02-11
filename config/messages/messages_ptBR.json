@@ -14,7 +14,9 @@
         "deleted_failure": "Imagem não pode ser deletada!"
     },
     "accommodation": {
-        "blank_accommodation_name": "O nome do alojamento não pode estar em branco!"
+        "blank_accommodation_name": "O nome do alojamento não pode estar em branco!",
+        "blank_accommodation_vacancies": "A quantidade de vagas do alojamento não pode estar em branco!",
+        "blank_accommodation_contact": "O contato do alojamento não pode estar em branco!"
     },
     "news": {
         "blank_news_heading": "O título da notícia não pode estar em branco!",
@@ -36,5 +38,16 @@
     "organizer": {
         "blank_name": "O nome do organizador não pode estar vazio!",
         "blank_img": "O organizador deve ter uma imagem/logo!"
+    },
+    "gallery": {
+        "blank_gallery_name": "O nome da galeria não pode estar vazio!",
+        "array_gallery": "A galeria não é um vetor!",
+        "blank_gallery_image_name": "O nome da imagem não pode estar vazio!",
+        "blank_gallery_image_img": "A indexação da imagem não pode estar vazia!"
+    },
+    "slider": {
+        "invalid_active_amount": "A quantidade de slides ativos deve ser um número inteiro maior que 0!",
+        "array_slides": "Slides deve ser um vetor!",
+        "blank_slide_img": "A indexação da imagem não pode estar vazia!"
     }
 }
