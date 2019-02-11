@@ -10,4 +10,5 @@ require('./tests/oauth.test');
 // require('./tests/drink.test');
 // require('./tests/organizer.test');
 // require('./tests/gallery.test');
-require('./tests/slider.test');
+// require('./tests/slider.test');
+require('./tests/settings.test');
