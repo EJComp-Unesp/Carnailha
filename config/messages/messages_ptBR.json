@@ -49,5 +49,10 @@
         "invalid_active_amount": "A quantidade de slides ativos deve ser um número inteiro maior que 0!",
         "array_slides": "Slides deve ser um vetor!",
         "blank_slide_img": "A indexação da imagem não pode estar vazia!"
+    },
+    "setting": {
+        "blank_year": "O ano não pode estar vazio!",
+        "blank_palette": "A paleta de cores do sistema não deve estar vazia!",
+        "blank_img": "É necessário fazer upload de uma imagem/logo!"
     }
 }
