@@ -8,6 +8,8 @@ var SettingSchema = new Schema({
     end: Date,
     img: String,
     map: String,
+    about: String,
+    about_mini: String,
     active: {
         type: Boolean,
         default: true
