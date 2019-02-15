@@ -7,6 +7,7 @@ var SettingSchema = new Schema({
     ini: Date,
     end: Date,
     img: String,
+    map: String,
     active: {
         type: Boolean,
         default: true

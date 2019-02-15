@@ -11,5 +11,5 @@ require('./tests/oauth.test');
 // require('./tests/organizer.test');
 // require('./tests/gallery.test');
 // require('./tests/slider.test');
-// require('./tests/settings.test');
-require('./tests/testimonial.test');
+require('./tests/settings.test');
+// require('./tests/testimonial.test');
