@@ -54,5 +54,9 @@
         "blank_year": "O ano não pode estar vazio!",
         "blank_palette": "A paleta de cores do sistema não deve estar vazia!",
         "blank_img": "É necessário fazer upload de uma imagem/logo!"
+    },
+    "testimonial": {
+        "blank_testimonial_name": "O nome da testemunha não pode estar vazio!",
+        "blank_testimonial_testimonial": "O depoimento não pode estar vazio!"
     }
 }
