@@ -26,6 +26,9 @@ describe('Test Settings is Working', function (done) {
                     insta: ''
                 },
                 img: '',
+                map: '', 
+                about: '', 
+                about_mini: '',
                 palette: {
                 }
             })
@@ -54,6 +57,9 @@ describe('Test Settings is Working', function (done) {
                     insta: 'https://www.instagram.com/carnailha/'
                 },
                 img: 'https://carnailha.com.br/resources/img/bg-01.jpg',
+                map: '<iframe src="https://www.google.com/maps/d/embed?mid=1SuoJitGi0-wggKLPqYtGHobmnnmywLPO" width="640" height="480"></iframe>',
+                about: 'O Carnailha é o maior carnaval universitário do Brasil. Ocorre desde 2013 na cidade de Ilha Solteira - SP, contando com grandes atrações e 50 horas de open bar em uma festa alucinante!', 
+                about_mini: 'O Carnailha é o maior carnaval universitário do Brasil. Ocorre desde 2013 na cidade de Ilha Solteira - SP, contando com grandes atrações e 50 horas de open bar em uma festa alucinante!',
                 palette: {
                     banner: '#c9c9c9',
                     background: '#c9c9c9'

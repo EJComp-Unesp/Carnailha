@@ -1,15 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-var SettingSchema = new Schema({
-    year: Number,
-    medias: Object,
-    palette: Object,
-    ini: Date,
-    end: Date,
+var TestimonialSchema = new Schema({
+    name: String,
+    testimonial: String,
     img: String,
-    map: String,
-    about: String,
-    about_mini: String,
     active: {
         type: Boolean,
         default: true
@@ -24,4 +18,4 @@ var SettingSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Setting', SettingSchema);
+module.exports = mongoose.model('Testimonial', TestimonialSchema);
