@@ -3,7 +3,7 @@ var path = require('path');
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 chai.use(chaiHttp);
-let server = require('../../loader.js');
+let server = require('../loader.js');
 
 var outputPath = __dirname + '/build_pages';
 let data = {};
@@ -17,9 +17,14 @@ pages = [
     name: `faq`,
     getUrl: `faq`,
     getArrayName: `faqs`
+  },
+    {
+    name: `parceiros`,
+    getUrl: `partner`,
+    getArrayName: `partners`
   }
 ]
-// First delete everything in the build directory.
+
 console.log('Cleaning previous build...');
 try {
   for (var file of fs.readdirSync(outputPath)) {
@@ -40,7 +45,7 @@ pages.forEach(page => {
       .end(function (err, res) {
         var pageTemplate = require(`./${page.name}`);//Read the template of page
         data[`${page.getArrayName}`] = res.body[`${page.getArrayName}`];//Save the array of regs
-        // console.log(data[`${page.getArrayName}`]);
+        console.log(data[`${page.getArrayName}`]);
         fs.writeFileSync(
           path.join(outputPath, `${page.name}.html`),
           pageTemplate.generatePage(data));
