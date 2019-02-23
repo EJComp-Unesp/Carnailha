@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors({origin: '*'}));
 //Serves a static directory to get images
-app.use('/images', express.static(config.UPLOAD_FOLDER));
+app.use('/uploads', express.static(config.UPLOAD_FOLDER));
 
 app.listen(config.APP.port, function(err){
     if(err) console.log(err);
