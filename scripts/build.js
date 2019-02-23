@@ -5,23 +5,29 @@ let chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 let server = require('../loader.js');
 
-var outputPath = __dirname + '/build_pages';
+// var outputPath = __dirname + '/build_pages';
+var outputPath = '/home/parafuso828/Projetos/carnailha';
 let data = {};
 pages = [
+  // {
+  //   name: `caravanas`,
+  //   getUrl: `caravan`,
+  //   getArrayName: `caravans`
+  // },
+  // {
+  //   name: `faq`,
+  //   getUrl: `faq`,
+  //   getArrayName: `faqs`
+  // },
+  //   {
+  //   name: `parceiros`,
+  //   getUrl: `partner`,
+  //   getArrayName: `partners`
+  // },
   {
-    name: `caravanas`,
-    getUrl: `caravan`,
-    getArrayName: `caravans`
-  },
-  {
-    name: `faq`,
-    getUrl: `faq`,
-    getArrayName: `faqs`
-  },
-    {
-    name: `parceiros`,
-    getUrl: `partner`,
-    getArrayName: `partners`
+    name: `alojamentos`,
+    getUrl: `accommodation`,
+    getArrayName: `accommodations`
   }
 ]
 
