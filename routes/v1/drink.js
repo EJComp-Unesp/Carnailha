@@ -12,8 +12,7 @@ const validator = [
         .escape(),
     check('icon')
         .isLength({ min: 1 })
-        .withMessage(msg.blank_icon)
-        .escape(),
+        .withMessage(msg.blank_icon),
     check('quantity')
         .isInt({ min: 1 })
         .withMessage(msg.min_quantity)

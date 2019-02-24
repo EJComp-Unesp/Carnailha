@@ -20,7 +20,6 @@ const validator = [
     body('images.*.img')
         .isLength({ min: 1 })
         .withMessage(msg.blank_gallery_image_img)
-        .escape()
 ]
 
 module.exports = (app, authenticate) => {
