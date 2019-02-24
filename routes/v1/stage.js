@@ -13,7 +13,6 @@ const validator = [
     check('img')
         .isLength({ min: 1 })
         .withMessage(msg.blank_img)
-        .escape()
 ]
 module.exports = (app, authenticate) => {
     app.post('/stage', validator, authenticate(), async (req, res) => {
