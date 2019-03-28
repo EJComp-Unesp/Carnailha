@@ -5,35 +5,6 @@ let chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 let server = require('../loader.js');
 
-<<<<<<< Updated upstream
-var outputPath = __dirname + '/build_pages';
-let data = {};
-pages = [
-  // {
-  //   name: `caravanas`,
-  //   getUrl: `caravan`,
-  //   getArrayName: `caravans`
-  // },
-  // {
-  //   name: `faq`,
-  //   getUrl: `faq`,
-  //   getArrayName: `faqs`
-  // },
-  //   {
-  //   name: `parceiros`,
-  //   getUrl: `partner`,
-  //   getArrayName: `partners`
-  // },
-  {
-    name: `caravanas`,
-    getUrl: `caravan`,
-    getArrayName: `caravans`
-  },
-  {
-    name: `faq`,
-    getUrl: `faq`,
-    getArrayName: `faqs`
-=======
 // var outputPath = __dirname + '/build_pages';
 var outputPath = 'C:/xampp/htdocs/projetos/carnabuild';
 let data = {};
@@ -67,7 +38,6 @@ pages = [
     name: `index`,
     getUrl: `index`,
     getArrayName: ``
->>>>>>> Stashed changes
   }
 ]
 
@@ -89,17 +59,11 @@ pages.forEach(page => {
     chai.request(server)
       .get(`/api/v1/${page.getUrl}`)
       .end(function (err, res) {
-<<<<<<< Updated upstream
-        var pageTemplate = require(`./${page.name}`);//Read the template of page
-        data[`${page.getArrayName}`] = res.body[`${page.getArrayName}`];//Save the array of regs
-        // console.log(data[`${page.getArrayName}`]);
-=======
         var pageTemplate = require(`./${page.name}/`);//Read the template of page
         if (page.getArrayName != null) {
           data[`${page.getArrayName}`] = res.body[`${page.getArrayName}`];//Save the array of regs
           console.log(data[`${page.getArrayName}`]);
         }
->>>>>>> Stashed changes
         fs.writeFileSync(
           path.join(outputPath, `${page.name}.html`),
           pageTemplate.generatePage(data));
