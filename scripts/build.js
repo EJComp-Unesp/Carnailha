@@ -34,10 +34,20 @@ pages = [
     getUrl: `gallery`,
     getArrayName: `galleries`
   } */
+  /* {
+    name: `slider`,
+    getUrl: `slider`,
+    getArrayName: `sliders`
+  }, */
+  /* {
+    name: `bebidas`,
+    getUrl: `drink`,
+    getArrayName: `drinks`
+  }, */
   {
-    name: `index`,
-    getUrl: `index`,
-    getArrayName: ``
+    name: `palcos`,
+    getUrl: `stage`,
+    getArrayName: `stages`
   }
 ]
 
