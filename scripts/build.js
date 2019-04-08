@@ -6,28 +6,48 @@ chai.use(chaiHttp);
 let server = require('../loader.js');
 
 // var outputPath = __dirname + '/build_pages';
-var outputPath = '/home/parafuso828/Projetos/carnailha';
+var outputPath = 'C:/xampp/htdocs/projetos/carnabuild';
 let data = {};
 pages = [
-  // {
-  //   name: `caravanas`,
-  //   getUrl: `caravan`,
-  //   getArrayName: `caravans`
-  // },
-  // {
-  //   name: `faq`,
-  //   getUrl: `faq`,
-  //   getArrayName: `faqs`
-  // },
-  //   {
-  //   name: `parceiros`,
-  //   getUrl: `partner`,
-  //   getArrayName: `partners`
-  // },
-  {
+  /* {
+    name: `caravanas`,
+    getUrl: `caravan`,
+    getArrayName: `caravans`
+  }, */
+  /* {
+    name: `faq`,
+    getUrl: `faq`,
+    getArrayName: `faqs`
+  }, */
+  /* {
+    name: `parceiros`,
+    getUrl: `partner`,
+    getArrayName: `partners`
+  }, */
+  /* {
     name: `alojamentos`,
     getUrl: `accommodation`,
     getArrayName: `accommodations`
+  }, */
+  /* {
+    name: `galeria`,
+    getUrl: `gallery`,
+    getArrayName: `galleries`
+  } */
+  /* {
+    name: `slider`,
+    getUrl: `slider`,
+    getArrayName: `sliders`
+  }, */
+  /* {
+    name: `bebidas`,
+    getUrl: `drink`,
+    getArrayName: `drinks`
+  }, */
+  {
+    name: `palcos`,
+    getUrl: `stage`,
+    getArrayName: `stages`
   }
 ]
 
@@ -49,14 +69,16 @@ pages.forEach(page => {
     chai.request(server)
       .get(`/api/v1/${page.getUrl}`)
       .end(function (err, res) {
-        var pageTemplate = require(`./${page.name}`);//Read the template of page
-        data[`${page.getArrayName}`] = res.body[`${page.getArrayName}`];//Save the array of regs
-        console.log(data[`${page.getArrayName}`]);
+        var pageTemplate = require(`./${page.name}/`);//Read the template of page
+        if (page.getArrayName != null) {
+          data[`${page.getArrayName}`] = res.body[`${page.getArrayName}`];//Save the array of regs
+          console.log(data[`${page.getArrayName}`]);
+        }
         fs.writeFileSync(
           path.join(outputPath, `${page.name}.html`),
           pageTemplate.generatePage(data));
       }); //Write the file
-      console.log(`- ${page.name}.html`);
+    console.log(`- ${page.name}.html`);
   }
   catch (err) {
     console.log('Error during page generation: ' + err);
