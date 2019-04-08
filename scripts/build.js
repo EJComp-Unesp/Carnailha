@@ -35,9 +35,9 @@ pages = [
     getArrayName: `galleries`
   } */
   {
-    name: `index`,
-    getUrl: `index`,
-    getArrayName: ``
+    name: `slider`,
+    getUrl: `slider`,
+    getArrayName: `sliders`
   }
 ]
 
