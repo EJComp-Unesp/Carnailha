@@ -6,7 +6,7 @@ chai.use(chaiHttp);
 let server = require('../loader.js');
 
 // var outputPath = __dirname + '/build_pages';
-var outputPath = 'C:/xampp/htdocs/projetos/carnabuild';
+var outputPath = 'C:/xamppz/htdocs/projetos/carnabuild';
 let data = {};
 pages = [
   /* {
@@ -44,10 +44,15 @@ pages = [
     getUrl: `drink`,
     getArrayName: `drinks`
   }, */
-  {
+  /* {
     name: `palcos`,
     getUrl: `stage`,
     getArrayName: `stages`
+  }, */
+  {
+    name: `noticia`,
+    getUrl: `news`,
+    getArrayName: `newsa`
   }
 ]
 
@@ -78,7 +83,7 @@ pages.forEach(page => {
           path.join(outputPath, `${page.name}.html`),
           pageTemplate.generatePage(data));
       }); //Write the file
-    console.log(`- ${page.name}.html`);
+    console.log(`- ${page.name}`);
   }
   catch (err) {
     console.log('Error during page generation: ' + err);
