@@ -39,10 +39,15 @@ pages = [
     getUrl: `slider`,
     getArrayName: `sliders`
   }, */
-  {
+  /* {
     name: `bebidas`,
     getUrl: `drink`,
     getArrayName: `drinks`
+  }, */
+  {
+    name: `palcos`,
+    getUrl: `stage`,
+    getArrayName: `stages`
   }
 ]
 
