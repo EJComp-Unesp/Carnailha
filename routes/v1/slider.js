@@ -17,7 +17,6 @@ const validator = [
     body('slides.*.img')
         .isLength({ min: 1 })
         .withMessage(msg.blank_slide_img)
-        .escape()
 ]
 
 module.exports = (app, authenticate) => {

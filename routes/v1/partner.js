@@ -23,8 +23,7 @@ const validator = [
         .isLength({
             min: 1
         })
-        .withMessage(msg.no_partner_img)
-        .escape(),
+        .withMessage(msg.no_partner_img),
 ]
 
 module.exports = (app, authenticate) => {
